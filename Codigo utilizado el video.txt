@@ -1,0 +1,40 @@
+
+//codigo en el navegador
+
+//Lista de campos de la tabla
+            List<string> CamposTabla = new List<string>();
+            //Lista de componentes del formulario
+            List<Control> lista = new List<Control>();
+            //variable con el campo codigo de la tabla
+            navegador1.cmp = "codigo_empleado";
+            //textbox en donde queremos que se muestre el codigo
+            navegador1.txt = textBox1;
+            //nombre de la tabla que se utilizara
+            navegador1.tbl = "empleados";
+            //campo estado
+            navegador1.campoEstado = "estado";
+
+            //se agregan los componentes del formulario a la lista tipo control
+            lista.Add(textBox1);
+            lista.Add(textBox2);
+            lista.Add(comboBox1);
+            lista.Add(comboBox2);
+            lista.Add(textBox3);
+            //se agregan a la lista global
+            navegador1.control = lista;
+
+            //elemento de la tabla a modificar se agregan a la lista
+            CamposTabla.Add("codigo_empleado");
+            CamposTabla.Add("nombre_completo");
+            CamposTabla.Add("puesto");
+            CamposTabla.Add("departamento");
+            CamposTabla.Add("estado");
+            //se agregan a la lista global
+            navegador1.Modificar = CamposTabla;
+            //hasta aqui lo que se necesita para modificar
+            navegador1.DatosActualizar = dataGridView1;
+            //se llamara a la funcion que contiene los datos de la tabla
+            navegador1.actualizarData();
+
+
+
